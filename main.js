@@ -10,14 +10,16 @@ function countingNotes(){
 }
 
 let getTextAboveIput = function inpuAbove (fn) {
-    
+
     if(textContainerAboveInput >= MAX_QUANTITY_LETTERS ){
         alert("More simbele")
     }
 }
 
-function inpuABelove () {
-    
+function inputBelove (textContens, nameContent,favoriteItem, deletedFn) {
+    const inputArea = document.createElement("p")
+    inputArea.classList.add("new_note")
+    inputArea.textContent = textContens
 }
 
 function butnEvent (){
