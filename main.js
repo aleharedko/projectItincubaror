@@ -10,6 +10,7 @@ function countingNotes(){
 }
 
 let getTextAboveIput = function inpuAbove (fn) {
+    
     if(textContainerAboveInput >= MAX_QUANTITY_LETTERS ){
         alert("More simbele")
     }
