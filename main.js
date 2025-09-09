@@ -1,10 +1,14 @@
 'use strict'
 const MAX_QUANTITY_LETTERS = 50  //максимальное кол-во для ввода в верхнем инпуте
 
-const buttonQS = document.querySelector("btn")
-const checkboxQS = document.querySelector("cb_click")
-const textContainerAboveInput = document.querySelector("above_input")
-const counerNote = document.querySelector('.counter')
+const buttonQS = document.querySelector(".btn")
+const checkboxQS = document.querySelector(".cb_click")
+const textContainerAboveInput = document.querySelector(".above_input")
+const counerNote = document.querySelector(".counter")
+
+counerNote.textContent = "djgndgd"
+
+
 
 function countingNotes(fnEvent, fnDelet) {
     let count = 0
