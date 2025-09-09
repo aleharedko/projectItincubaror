@@ -4,13 +4,18 @@ const MAX_QUANTITY_LETTERS = 50  //максимальное кол-во для �
 const buttonQS = document.querySelector("btn")
 const checkboxQS = document.querySelector("cb_click")
 const textContainerAboveInput = document.querySelector("above_input")
-let counerNote = document.querySelector('counter')
-counerNote.innerHTML("span")
-counerNote.textContent = 0
+const counerNote = document.querySelector('.counter')
 
 function countingNotes() {
+    let count = 0
+    counerNote.textContent = count
+    if(){
 
+    }
+    return count
 }
+
+countingNotes()
 
 let getTextAboveIput = function inpuAbove(fn) {
 
@@ -26,7 +31,9 @@ function inputBelove(textContens, nameContent, favoriteItem, deletedFn) {
 }
 
 function butnEvent() {
-
+    buttonQS.addEventListener("click", function(){
+        
+    } )
 }
 
 const eroorFn = function errorMasage() {
