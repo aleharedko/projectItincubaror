@@ -6,15 +6,13 @@ const checkboxQS = document.querySelector("cb_click")
 const textContainerAboveInput = document.querySelector("above_input")
 const counerNote = document.querySelector('.counter')
 
-function countingNotes(fnEvent,fnDelet,fnEroor,fnAcsees) {
+function countingNotes(fnEvent, fnDelet) {
     let count = 0
     counerNote.textContent = count
-    if(fnEvent){
+    if (fnEvent) {
         count++
-        fnAcsees()
-    }else if(fnDelet){
+    } else if (fnDelet) {
         count--
-        fnEroor()
     }
     return count
 }
@@ -28,16 +26,20 @@ let getTextAboveIput = function inpuAbove(fn) {
 }
 
 function inputBelove(textContens, nameContent, favoriteItem, deletedFn) {
-    const inputArea = document.createElement("p")
+    const inputArea = document.createElement("div")
     inputArea.classList.add("new_note")
     inputArea.textContent = textContens
 }
+inputBelove()
 
 function butnEvent(fnAcsees) {
-    buttonQS.addEventListener("click", function(){
-        
-    } )
+    buttonQS.addEventListener("click", function () {
+
+
+    })
 }
+
+butnEvent(fullAccsesMassage())
 
 const eroorFn = function errorMasage() {
     alert("Невозможно добавить заметку")
