@@ -10,7 +10,7 @@ counerNote.textContent = "0"
 
 
 
-function countingNotes(fnClick, fnDelet) {
+function countingNotes(fnClick, fnDelet) { //счетчик
     let count = 0
     counerNote.textContent = count
     if (fnClick) {
@@ -23,20 +23,20 @@ function countingNotes(fnClick, fnDelet) {
 
 countingNotes(btnClick(), )
 
-let getTextAboveIput = function inpuAbove(fn) {
+let getTextAboveIput = function inpuAbove(fn) {  //поледя название заметки
     if (textContainerAboveInput >= MAX_QUANTITY_LETTERS) {
         alert("More simbele")
     }
 }
 
-function inputBelove(textContens, nameContent, favoriteItem, deletedFn) {
+function inputBelove(textContens, nameContent, favoriteItem, deletedFn) { // поле для текста
     const inputArea = document.createElement("div")
     inputArea.classList.add("new_note")
     inputArea.textContent = textContens
 }
 inputBelove()
 
-const btnClick = function butnEvent(fnAcsees) {
+const btnClick = function butnEvent(fnAcsees) { //кнопка
     buttonQS.addEventListener("click", function () {
 
 
@@ -45,10 +45,10 @@ const btnClick = function butnEvent(fnAcsees) {
 
 butnEvent(fullAccsesMassage())
 
-const eroorFn = function errorMasage() {
+const eroorFn = function errorMasage() { //неудачное добавление
     alert("Невозможно добавить заметку")
 }
 
-function fullAccsesMassage() {
+function fullAccsesMassage() { //удачное
     alert("Заметка добавлен!")
 }
