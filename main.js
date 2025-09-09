@@ -6,11 +6,15 @@ const checkboxQS = document.querySelector("cb_click")
 const textContainerAboveInput = document.querySelector("above_input")
 const counerNote = document.querySelector('.counter')
 
-function countingNotes() {
+function countingNotes(fnEvent,fnDelet,fnEroor,fnAcsees) {
     let count = 0
     counerNote.textContent = count
-    if(){
-
+    if(fnEvent){
+        count++
+        fnAcsees()
+    }else if(fnDelet){
+        count--
+        fnEroor()
     }
     return count
 }
@@ -18,7 +22,6 @@ function countingNotes() {
 countingNotes()
 
 let getTextAboveIput = function inpuAbove(fn) {
-
     if (textContainerAboveInput >= MAX_QUANTITY_LETTERS) {
         alert("More simbele")
     }
@@ -30,7 +33,7 @@ function inputBelove(textContens, nameContent, favoriteItem, deletedFn) {
     inputArea.textContent = textContens
 }
 
-function butnEvent() {
+function butnEvent(fnAcsees) {
     buttonQS.addEventListener("click", function(){
         
     } )
