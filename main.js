@@ -8,15 +8,15 @@ const counerNote = document.querySelector(".counter")
 
 counerNote.textContent = "0"
 
-const model = {
-    
-}
-
-const view = {
+const model = { // хранение данных, бизнес-логика
 
 }
 
-const controler = {
+const view = { // отображение данных: рендер списка задач, размещение обработчиков событий 
+
+}
+
+const controler = { // обработка действий пользователя, обновление модели
 
 }
 
