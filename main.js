@@ -8,6 +8,11 @@ const counerNote = document.querySelector(".counter")
 
 counerNote.textContent = "0"
 
+const MOKE_NOTE = [
+    {},
+    {}
+]
+
 const model = { // хранение данных, бизнес-логика
 
 }
