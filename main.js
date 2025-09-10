@@ -8,6 +8,19 @@ const counerNote = document.querySelector(".counter")
 
 counerNote.textContent = "0"
 
+const model = {
+    
+}
+
+const view = {
+
+}
+
+const controler = {
+
+}
+
+
 
 
 function countingNotes(fnClick, fnDelet) { //счетчик
