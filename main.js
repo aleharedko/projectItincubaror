@@ -12,7 +12,7 @@ const view = { // отображение данных: рендер списка
 init(){
     this.renderTask(model.task)
 
-    renderTask(){
+    renderTask(){ //функция для рендаринга
 
     }
 }
