@@ -16,25 +16,6 @@ const model = {
     notes: MOCK_NOTES,
 }
 
-const colors = {
-    GREEN: 'green',
-    BLUE: 'blue',
-    RED: 'red',
-    YELLOW: 'yellow',
-    PURPLE: 'purple',
-}
-
-// const MOCK_NOTES = [
-//     {
-//         // ...
-//         color: colors.GREEN,
-//     },
-//     {
-//         // ...
-//         color: colors.YELLOW,
-//     }
-// ]
-
 const view = {
     init() {
         this.renderNotes(model.notes)

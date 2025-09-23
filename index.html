@@ -26,15 +26,30 @@
 
         <div>
             <label for="input_below">Описание новой заметки</label>
-            <textarea  rows="5" id="input_below" placeholder="Напишите описание новой заметки.." name="input_below"></textarea>
+            <textarea rows="5" id="input_below" placeholder="Напишите описание новой заметки.."
+                      name="input_below"></textarea>
 
             <div>
-                <p>Выберите цвет заметки</p>
-                <input type="radio" name="" id="" value="">
-                <input type="radio" name="" id="" value="">
-                <input type="radio" name="" id="" value="">
-                <input type="radio" name="" id="" value="">
-                <input type="radio" name="" id="" value="">
+                <fieldset class="fieldset">
+                    <legend class="label">Выберите цвет заметки</legend>
+                    <ul class="radio-list">
+                        <li>
+                            <input checked class="radio" type="radio" name="color" value="yellow" aria-label="yellow"/>
+                        </li>
+                        <li>
+                            <input class="radio" type="radio" name="color" value="red" aria-label="red"/>
+                        </li>
+                        <li>
+                            <input class="radio" type="radio" name="color" value="green" aria-label="green"/>
+                        </li>
+                        <li>
+                            <input class="radio" type="radio" name="color" value="blue" aria-label="blue"/>
+                        </li>
+                        <li>
+                            <input class="radio" type="radio" name="color" value="purple" aria-label="purple"/>
+                        </li>
+                    </ul>
+                </fieldset>
             </div>
         </div>
     </form>
