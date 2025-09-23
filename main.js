@@ -2,32 +2,59 @@
 const MAX_QUANTITY_LETTERS = 50 //максимальное кол-во для ввода в верхнем инпуте
 const counterNumber = document.querySelector('.counter')
 
-const model = { // хранение данных, бизнес-логика
-    task: [{}, //мои моковые данные
-        {}], // <--- Пропущена запятая
-    // newTask: {id, isDone, title}, // <--- Нельзя объявлять переменную внутри объекта
+const MOCK_NOTES = [
+    {
+        id: 1,
+        title: 'Работа с формами',
+        content: 'К определённым полям формы можно обратиться через form.elements по значению, указанному в атрибуте name',
+        color: 'green',
+        isFavorite: false,
+    },
+    // ...
+]
 
-    // Правильный способ хранить данные:
-    newTask: {id: null, isDone: false, title: ''}
+const model = {
+    notes: MOCK_NOTES,
 }
 
-const view = { // отображение данных: рендер списка задач, размещение обработчиков событий
-    init(){
-        counterNumber.innerHTML = '0'
-        this.renderTask(model.task)
-    }, // <--- Пропущена запятая
+const colors = {
+    GREEN: 'green',
+    BLUE: 'blue',
+    RED: 'red',
+    YELLOW: 'yellow',
+    PURPLE: 'purple',
+}
 
-    renderTask(tasks){ //функция для рендеринга
-        // Логика рендеринга
+const MOCK_NOTES = [
+    {
+        // ...
+        color: colors.GREEN,
+    },
+    {
+        // ...
+        color: colors.YELLOW,
     }
-}
+]
 
-const controller = { // обработка действий пользователя, обновление модели
+const view = {
     init() {
-        // Логика инициализации контроллера
+        this.renderNotes(model.notes)
+    },
+    renderNotes(notes) {
+        // your code here
+        // находим контейнер для заметок и рендерим заметки в него (если заметок нет, отображаем соответствующий текст)
+        // также здесь можно будет повесить обработчики кликов на кнопки удаления и избранного
+
+    },
+    renderNotesCount(){  //функция для отображения счетчика с количеством заметок
+
     }
 }
 
-// Теперь можно вызывать методы объектов
-view.init()
-controller.init()
+function init() {
+    view.init()
+    view.init.renderNotesCount()
+
+}
+
+init()
