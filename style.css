@@ -40,7 +40,6 @@ header > div > img, .strong_number {
     display: flex;
     flex-direction: column;
 }
-}
 
 fieldset {
      all: unset;
@@ -91,4 +90,8 @@ legend {
     border-color: white;
     box-shadow: 0 0 0 3px white, /* Внутренняя обводка для создания промежутка */
     0 0 0 4.5px #007BFF; /* Внешняя обводка */
+}
+
+.btn_adds{
+
 }
