@@ -22,11 +22,24 @@ body {
 }
 .header{
     border-bottom: 0.3px solid black;
-    margin-bottom: 24px;
 }
 
 header > div > img, .strong_number {
     margin: 0px 64px;
+}
+
+.main_container{
+    width: 1152px;
+    margin: 24px 64px;
+}
+
+
+
+.note-form{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
 }
 
 fieldset {
