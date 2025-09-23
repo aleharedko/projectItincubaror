@@ -93,5 +93,16 @@ legend {
 }
 
 .btn_adds{
+    background: #457CDC;
+    width: 232;
+    height: 36;
+    angle: 0 deg;
+    opacity: 1;
+    border-radius: 10px;
+    padding-top: 6px;
+    padding-right: 24px;
+    padding-bottom: 6px;
+    padding-left: 24px;
+    gap: 8px;
 
 }
