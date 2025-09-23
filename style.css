@@ -14,7 +14,6 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
-
 .container{
     display: flex;
     height: 60px;
@@ -23,6 +22,7 @@ body {
 }
 .header{
     border-bottom: 0.3px solid black;
+    margin-bottom: 24px;
 }
 
 header > div > img, .strong_number {
