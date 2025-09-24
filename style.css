@@ -39,9 +39,6 @@ header > div > img, .strong_number {
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-}
-
-.note-form, .btn_filter{
     margin-bottom: 24px;
 }
 
@@ -111,5 +108,7 @@ legend {
 }
 
 .style_note{
+    border: 1px solid black;
+    border-radius: 10px;
 
 }
