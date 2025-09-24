@@ -41,6 +41,10 @@ header > div > img, .strong_number {
     flex-direction: column;
 }
 
+.note-form, .btn_filter{
+    margin-bottom: 24px;
+}
+
 fieldset {
      all: unset;
  }
@@ -104,5 +108,8 @@ legend {
     padding-bottom: 6px;
     padding-left: 24px;
     gap: 8px;
+}
+
+.style_note{
 
 }
