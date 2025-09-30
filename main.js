@@ -66,7 +66,7 @@ const view = {
         listContainer.innerHTML = ''; //чтобы заметки не дублировались при повторном вызове функции
 
         if (notes.length === 0){
-             listContainer.innerHTMl =
+            listContainer.innerHTML =
                  `
              <p>У вас ещё нет ни одной заметки. Заполните поля выше и создайте свою первую заметку!</p>;
              `
