@@ -13,9 +13,9 @@ const MOCK_NOTES = [
 
 const model = {
     notes: MOCK_NOTES,
-    addNotes(title, discription, stat){
+    addNotes(title, content, stat, color,){
         const idNotes = Number(new Date().getTime()) //создаю уникальный id
-        const newNotes = {id, title, discription, stat}
+        const newNotes = {id, title, content, stat, isFavorite: false}
         this.notes.unshift(newNotes)
         view.renderNotes(model.notes)
     },
@@ -73,6 +73,9 @@ const view = {
         const count = document.querySelector(".strong_number")
         count.innerHTML = numberCount
     }
+
+    toggle(token, force) {
+    }
 }
 
 const controler = {
@@ -88,7 +91,6 @@ const controler = {
 
 function init() {
     view.init()
-
 }
 
 document.addEventListener('DOMContentLoaded', init);
