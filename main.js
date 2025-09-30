@@ -9,11 +9,25 @@ const MOCK_NOTES = [
         color: 'green',
         isFavorite: false,
     },
-    // ...
 ]
 
 const model = {
     notes: MOCK_NOTES,
+    addNotes(title, discription, stat){
+        const idNotes = Number(new Date().getTime()) //создаю уникальный id
+        const newNotes = {id, title, discription, stat}
+        this.notes.unshift(newNotes)
+        view.renderNotes(model.notes)
+    },
+
+    deleteNotes(id){
+        const indexToDel = this.notes.findIndex(note => note.id === id)
+        if (indexToDel !== -1){
+            this.notes.splise(indexToDel, 1)
+            view.renderNotes(model.notes)
+        }
+        return indexToDel !== -1
+    }
 }
 
 const view = {
@@ -62,8 +76,7 @@ const view = {
 
 function init() {
     view.init()
-    view.renderNotesCount()
 
 }
 
-init()
+document.addEventListener('DOMContentLoaded', init);
