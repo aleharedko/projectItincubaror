@@ -8,7 +8,7 @@ const list = document.querySelector(".notes_list")
 
 const MOCK_NOTES = [
     {
-        id: 1,
+        idNotes: 1,
         title: 'Работа с формами',
         content: 'К определённым полям формы можно обратиться через form.elements по значению, указанному в атрибуте name',
         color: 'green',
@@ -21,18 +21,21 @@ const model = {
 
     addNotes(title, content, stat, color,){
         const idNotes = Number(new Date().getTime()) //создаю уникальный id
-        const newNotes = {id, title, content, stat, isFavorite: false}
+        const newNotes = {idNotes, title, content, stat, isFavorite: false}
         this.notes.unshift(newNotes)
         view.renderNotes(model.notes)
+        view.renderNotesCount()
     },
 
     deleteNotes(id){
         const indexToDel = this.notes.findIndex(note => note.id === id)
         if (indexToDel !== -1){
-            this.notes.splise(indexToDel, 1)
+            this.notes.splice(indexToDel, 1)
             view.renderNotes(model.notes)
+            view.renderNotesCount()
         }
         return indexToDel !== -1
+
     }
 }
 
