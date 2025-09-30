@@ -5,6 +5,7 @@ const btnAddNote = document.querySelector('.note_form')
 const inputTitel = document.querySelector(".input_above")
 const inputContent = document.querySelector(".input_below")
 const list = document.querySelector(".notes_list")
+const messageContainer = document.getElementById('message-container');
 
 const MOCK_NOTES = [
     {
@@ -19,16 +20,16 @@ const MOCK_NOTES = [
 const model = {
     notes: MOCK_NOTES,
 
-    addNotes(title, content, stat, color,){
+    addNotes(title, content, color){
         const idNotes = Number(new Date().getTime()) //создаю уникальный id
-        const newNotes = {idNotes, title, content, stat, isFavorite: false}
+        const newNotes = {idNotes, title, content, color, isFavorite: false}
         this.notes.unshift(newNotes)
         view.renderNotes(model.notes)
         view.renderNotesCount()
     },
 
     deleteNotes(id){
-        const indexToDel = this.notes.findIndex(note => note.id === id)
+        const indexToDel = this.notes.findIndex(note => note.idNotes === id)
         if (indexToDel !== -1){
             this.notes.splice(indexToDel, 1)
             view.renderNotes(model.notes)
@@ -42,11 +43,22 @@ const model = {
 const view = {
     init() {
         this.renderNotes(model.notes)
+
+        btnAddNote.addEventListener("submit", function (event){
+            event.preventDefault()
+            const titel = inputTitel.value
+            const content = inputContent.value
+            controller.addNotes(titel, content);
+
+            inputTitel.value = '';
+            inputContent.value = '';
+        })
+
     },
 
     renderNotes(notes) {
         // находим контейнер для заметок и рендерим заметки в него (если заметок нет, отображаем соответствующий текст)
-        const listContainer = document.querySelector(".notes-list")
+        const listContainer = document.querySelector(".notes_list")
 
         if(!listContainer){//Проверяем, что контейнер найден, чтобы избежать ошибок.
             return;
@@ -74,15 +86,6 @@ const view = {
         })
 
         // также здесь можно будет повесить обработчики кликов на кнопки удаления и избранного
-        btnAddNote.addEventListener("submit", function (event){
-            event.preventDefault()
-            const titel = inputTitel.value
-            const content = inputContent.value
-            controller.addNotes(title, description);
-
-            inputTitle.value = '';
-            inputDescription.value = '';
-        })
 
     },
 
@@ -92,23 +95,52 @@ const view = {
         count.innerHTML = numberCount
     },
 
+    displayMessage(message, isError = false) {
+        if (!messageContainer) {
+            console.error("Контейнер для сообщений (#message-container) не найден.");
+            return;
+        }
+
+        // 1. Устанавливаем сообщение
+        messageContainer.textContent = message;
+
+        // 2. Управляем стилями для отображения ошибки
+        if (isError) {
+            messageContainer.classList.add('error'); // 👈 Предполагает, что в CSS есть .error
+        } else {
+            messageContainer.classList.remove('error');
+        }
+
+        // 3. Делаем контейнер видимым (если он по умолчанию скрыт)
+        messageContainer.style.display = 'block';
+
+        // 4. Очищаем сообщение через несколько секунд (опционально, но рекомендуется)
+        setTimeout(() => {
+            messageContainer.textContent = '';
+            messageContainer.classList.remove('error');
+            messageContainer.style.display = 'none';
+        }, 3000); // Сообщение исчезнет через 3 секунды
+    },
+
     toggle(token, force) {
     }
 }
 
 const controler = {
-    addNotes(title, description){
-        if (title.trim() !== '' && description.trim() !== '' && description.length <= MAX_QUANTITY_LETTERS) {
-            model.addNotes(title, description);
-            view.displayMessage('Замеметка добавлена');
+    addNotes(title, content){ // ✅ Принимаем только title и content
+        // ...
+        // Вам нужно получить color из формы (например, выбранное радио)
+        const color = document.querySelector('input[name="color"]:checked')?.value || 'yellow'; // Пример получения цвета
+
+        if (title.trim() !== '' && content.trim() !== '' && title.length <= MAX_QUANTITY_LETTERS) {
+            // Передаем в модель все нужные данные
+            model.addNotes(title, content, color); // ❗ Здесь должно быть 3 аргумента
+            view.displayMessage('Заметка добавлена');
         } else {
             view.displayMessage('Заметка не добавлена', true);
         }
     },
-
-    deleteNotes(id) {
-        return false;
-    }
+    // ...
 }
 
 function init() {
