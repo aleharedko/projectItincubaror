@@ -34,6 +34,7 @@ const view = {
     init() {
         this.renderNotes(model.notes)
     },
+
     renderNotes(notes) {
         // находим контейнер для заметок и рендерим заметки в него (если заметок нет, отображаем соответствующий текст)
         const listContainer = document.querySelector(".notes-list")
@@ -73,6 +74,17 @@ const view = {
         count.innerHTML = numberCount
     }
 }
+
+const controler = {
+    addNotes(){
+
+    },
+
+    deleteNotes(id) {
+        return false;
+    }
+}
+
 
 function init() {
     view.init()
