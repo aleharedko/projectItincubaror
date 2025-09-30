@@ -1,6 +1,10 @@
 'use strict'
 const MAX_QUANTITY_LETTERS = 50 //максимальное кол-во для ввода в верхнем инпуте
+
 const btnAddNote = document.querySelector('.note_form')
+const inputTitel = document.querySelector(".input_above")
+const inputContent = document.querySelector(".input_below")
+const list = document.querySelector(".notes_list")
 
 const MOCK_NOTES = [
     {
@@ -69,6 +73,12 @@ const view = {
         // также здесь можно будет повесить обработчики кликов на кнопки удаления и избранного
         btnAddNote.addEventListener("submit", function (event){
             event.preventDefault()
+            const titel = inputTitel.value
+            const content = inputContent.value
+            controller.addNotes(title, description);
+
+            inputTitle.value = '';
+            inputDescription.value = '';
         })
 
     },
@@ -84,8 +94,13 @@ const view = {
 }
 
 const controler = {
-    addNotes(){
-
+    addNotes(title, description){
+        if (title.trim() !== '' && description.trim() !== '' && description.length <= MAX_QUANTITY_LETTERS) {
+            model.addNotes(title, description);
+            view.displayMessage('Замеметка добавлена');
+        } else {
+            view.displayMessage('Заметка не добавлена', true);
+        }
     },
 
     deleteNotes(id) {
