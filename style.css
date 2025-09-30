@@ -35,7 +35,7 @@ header > div > img, .strong_number {
 
 
 
-.note-form{
+.note_form{
     border: 1px solid black;
     display: flex;
     flex-direction: column;

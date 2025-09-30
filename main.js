@@ -1,5 +1,6 @@
 'use strict'
 const MAX_QUANTITY_LETTERS = 50 //максимальное кол-во для ввода в верхнем инпуте
+const btnAddNote = document.querySelector('.note_form')
 
 const MOCK_NOTES = [
     {
@@ -13,6 +14,7 @@ const MOCK_NOTES = [
 
 const model = {
     notes: MOCK_NOTES,
+
     addNotes(title, content, stat, color,){
         const idNotes = Number(new Date().getTime()) //создаю уникальный id
         const newNotes = {id, title, content, stat, isFavorite: false}
@@ -65,6 +67,9 @@ const view = {
         })
 
         // также здесь можно будет повесить обработчики кликов на кнопки удаления и избранного
+        btnAddNote.addEventListener("submit", function (event){
+            event.preventDefault()
+        })
 
     },
 
@@ -72,7 +77,7 @@ const view = {
         const numberCount = model.notes.length
         const count = document.querySelector(".strong_number")
         count.innerHTML = numberCount
-    }
+    },
 
     toggle(token, force) {
     }
@@ -87,7 +92,6 @@ const controler = {
         return false;
     }
 }
-
 
 function init() {
     view.init()
