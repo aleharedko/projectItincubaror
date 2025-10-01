@@ -5,7 +5,7 @@ const btnAddNote = document.querySelector('.note_form')
 const inputTitel = document.querySelector(".input_above")
 const inputContent = document.querySelector(".input_below")
 const list = document.querySelector(".notes_list")
-const messageContainer = document.getElementById('message-container');
+const messageContainer = document.querySelector('.message-container');
 
 const MOCK_NOTES = [
     {
@@ -14,6 +14,13 @@ const MOCK_NOTES = [
         content: 'К определённым полям формы можно обратиться через form.elements по значению, указанному в атрибуте name',
         color: 'green',
         isFavorite: false,
+    },
+    {
+        idNotes: 2,
+        title: 'Работа с функциями',
+        content: 'Функции могут быть разных видов, а некоторые из них могут передаваться в качестве аргументов',
+        color: 'red',
+        isFavorite: true,
     },
 ]
 
@@ -96,15 +103,13 @@ const view = {
 
     displayMessage(message, isError = false) {
         if (!messageContainer) {
-            console.error("Контейнер для сообщений (#message-container) не найден.");
+            console.error("Контейнер для сообщений (.messages-box) не найден."); // выводит сообщение в консоль, нали это вообще, либо излишне?
             return;
         }
 
-        // 1. Устанавливаем сообщение
-        messageContainer.textContent = message;
+        messageContainer.textContent = message;     // 1. Устанавливаем сообщение, передаём для отображения
 
-        // 2. Управляем стилями для отображения ошибки
-        if (isError) {
+        if (isError) {  // 2. Управляем стилями для отображения ошибки
             messageContainer.classList.add('error'); // 👈 Предполагает, что в CSS есть .error
         } else {
             messageContainer.classList.remove('error');
