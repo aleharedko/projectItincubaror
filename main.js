@@ -127,14 +127,14 @@ const view = {
 }
 
 const controler = {
-    addNotes(title, content){ // ✅ Принимаем только title и content
+    addNotes(title, content){
         // ...
         // Вам нужно получить color из формы (например, выбранное радио)
         const color = document.querySelector('input[name="color"]:checked')?.value || 'yellow'; // Пример получения цвета
 
         if (title.trim() !== '' && content.trim() !== '' && title.length <= MAX_QUANTITY_LETTERS) {
             // Передаем в модель все нужные данные
-            model.addNotes(title, content, color); // ❗ Здесь должно быть 3 аргумента
+            model.addNotes(title, content, color);
             view.displayMessage('Заметка добавлена');
         } else {
             view.displayMessage('Заметка не добавлена', true);
