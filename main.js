@@ -123,8 +123,8 @@ const view = {
 }
 
 const controler = {
-    addNotes(title, content){
-        const color = document.querySelector('input[name="color"]:checked')?.value || 'yellow';
+    addNotes(title, content){  //2 аргумента а ниже сразу у меня в данной функции 3 аргумента???
+        const color = document.querySelector('input[name="color"]:checked')?.value || 'yellow'; //думается что несовсем коректно
 
         if (title.trim() !== '' && content.trim() !== '' && title.length <= MAX_QUANTITY_LETTERS) {
             model.addNotes(title, content, color);
