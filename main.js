@@ -48,12 +48,11 @@ const view = {
             event.preventDefault()
             const titel = inputTitel.value
             const content = inputContent.value
-            controller.addNotes(titel, content);
+            controler.addNotes(titel, content);
 
             inputTitel.value = '';
             inputContent.value = '';
         })
-
     },
 
     renderNotes(notes) {
@@ -121,26 +120,24 @@ const view = {
             messageContainer.style.display = 'none';
         }, 3000); // Сообщение исчезнет через 3 секунды
     },
-
-    toggle(token, force) {
-    }
 }
 
 const controler = {
     addNotes(title, content){
-        // ...
-        // Вам нужно получить color из формы (например, выбранное радио)
-        const color = document.querySelector('input[name="color"]:checked')?.value || 'yellow'; // Пример получения цвета
+        const color = document.querySelector('input[name="color"]:checked')?.value || 'yellow';
 
         if (title.trim() !== '' && content.trim() !== '' && title.length <= MAX_QUANTITY_LETTERS) {
-            // Передаем в модель все нужные данные
             model.addNotes(title, content, color);
             view.displayMessage('Заметка добавлена');
         } else {
-            view.displayMessage('Заметка не добавлена', true);
+            // Добавим более конкретное сообщение об ошибке
+            if (title.length > MAX_QUANTITY_LETTERS) {
+                view.displayMessage(`Заголовок не должен превышать ${MAX_QUANTITY_LETTERS} символов.`, true);
+            } else {
+                view.displayMessage('Заголовок и текст заметки не должны быть пустыми.', true);
+            }
         }
-    },
-    // ...
+    }
 }
 
 function init() {
