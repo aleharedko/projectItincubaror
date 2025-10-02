@@ -108,8 +108,12 @@ legend {
 }
 
 .style_note{
+    width: 368px;
+    height: auto;
     border: 1px solid black;
     border-radius: 10px;
+    margin: 16px;
+    padding: 16px 8px;
 
 }
 

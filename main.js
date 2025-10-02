@@ -80,14 +80,14 @@ const view = {
         }
 
         notes.forEach(note => {
-            const noteElement = document.createElement('div')
-            noteElement.className = 'note-item'
+            const noteElement = document.createElement('li')
+            noteElement.className = 'style_note'
             noteElement.innerHTML = `
-             <h3>${note.title}</h3>
+             <h3 style="color: ${note.color}>${note.title}</h3>
                 <p>${note.content}</p>
                 `;
 
-            // Добавляем созданный элемент в основной контейнер.
+            // Добавляем созданный элемент в   основной контейнер.
             listContainer.appendChild(noteElement);
         })
 
@@ -129,7 +129,7 @@ const view = {
 
 const controler = {
     addNotes(title, content){  //2 аргумента а ниже сразу у меня в данной функции 3 аргумента???
-        const color = document.querySelector('input[name="color"]:checked')?.value || 'yellow'; //думается что несовсем коректно
+        const color = document.querySelector('input[name="color"]:checked')?.value || 'yellow'; //для получения цвета от пользователя
 
         if (title.trim() !== '' && content.trim() !== '' && title.length <= MAX_QUANTITY_LETTERS) {
             model.addNotes(title, content, color);
