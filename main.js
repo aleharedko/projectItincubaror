@@ -82,8 +82,9 @@ const view = {
         notes.forEach(note => {
             const noteElement = document.createElement('li')
             noteElement.className = 'style_note'
+            noteElement.setAttribute("style", "color: ${note.color}")
             noteElement.innerHTML = `
-             <h3 style="color: ${note.color}>${note.title}</h3>
+             <h3>${note.title}</h3>
                 <p>${note.content}</p>
                 `;
 
