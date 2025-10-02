@@ -2,10 +2,10 @@
 const MAX_QUANTITY_LETTERS = 50 //максимальное кол-во для ввода в верхнем инпуте
 
 const btnAddNote = document.querySelector('.note_form')
-const inputTitel = document.querySelector(".input_above")
-const inputContent = document.querySelector(".input_below")
+const inputTitel = document.querySelector("#input_above")
+const inputContent = document.querySelector("#input_below")
 const list = document.querySelector(".notes_list")
-const messageContainer = document.querySelector('.message-container');
+const messageContainer = document.querySelector('.messages-box');
 
 const MOCK_NOTES = [
     {
