@@ -86,7 +86,7 @@ const view = {
              <h3 style = "background-color: ${note.color}">${note.title}</h3>
                 <p>${note.content}</p>
                 `;
-
+            1
             // Добавляем созданный элемент в   основной контейнер.
             listContainer.appendChild(noteElement);
         })
