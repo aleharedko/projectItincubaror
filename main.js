@@ -87,7 +87,7 @@ const view = {
                 <p>${note.content}</p>
                 `;
             1   === 1
-                2
+                2 === 2
                     3
             // Добавляем созданный элемент в   основной контейнер.
             listContainer.appendChild(noteElement);
