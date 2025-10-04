@@ -89,6 +89,7 @@ const view = {
             1   === 1
                 2 === 2
                     3 === 3
+                        4 === 4
             // Добавляем созданный элемент в   основной контейнер.
             listContainer.appendChild(noteElement);
         })
