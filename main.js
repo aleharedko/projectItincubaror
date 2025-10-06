@@ -128,6 +128,7 @@ const controler = {
 
         if (title.trim() !== '' && content.trim() !== '' && title.length <= MAX_QUANTITY_LETTERS) {
             model.addNotes(title, content, color);
+            displayMessage.classList.add("success") // добавил класс функции ошибка
             view.displayMessage('Заметка добавлена');
         } else {
             // Добавим более конкретное сообщение об ошибке
