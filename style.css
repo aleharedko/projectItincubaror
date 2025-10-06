@@ -31,6 +31,7 @@ header > div > img, .strong_number {
 .main_container{
     width: 1152px;
     margin: 24px 64px;
+    position: relative;
 }
 
 
@@ -41,6 +42,41 @@ header > div > img, .strong_number {
     flex-direction: column;
     margin-bottom: 24px;
 }
+
+.messages-box{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: 48px;
+    border: none;
+    border-radius: 10px;
+    margin: 16px;
+    padding: 16px 8px;
+    text-align: center;
+    box-shadow: 0 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+
+
+
+    /* Изначально делаем контейнер невидимым
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    */
+}
+
+.messages-box.error {
+    background-image: url("image/icons/Vector (5).png");
+    background-color: red;
+}
+
+.messages-box.success{
+    background-image: url("image/icons/Vector (4).png");
+    background-color: green;
+}
+
+
 
 fieldset {
      all: unset;
