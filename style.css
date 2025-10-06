@@ -68,12 +68,18 @@ header > div > img, .strong_number {
 
 .messages-box.error {
     background-image: url("image/icons/Vector (5).png");
+    background-position: 5px center;
     background-color: red;
+    background-repeat: no-repeat;
+    padding-left: 33px;
 }
 
 .messages-box.success{
-    background-image: url("image/icons/Vector (4).png");
+    background-image:url("image/icons/Vector (4).png");
     background-color: green;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 33px;
 }
 
 

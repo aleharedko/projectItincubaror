@@ -105,9 +105,11 @@ const view = {
         messageContainer.textContent = message;     // 1. Устанавливаем сообщение, передаём для отображения
 
         if (isError) {  // 2. Управляем стилями для отображения ошибки
-            messageContainer.classList.add('error'); // 👈 Предполагает, что в CSS есть .error
+            messageContainer.classList.add('error');
+            messageContainer.classList.remove('success')
         } else {
             messageContainer.classList.remove('error');
+            messageContainer.classList.add('success')
         }
 
 
@@ -118,6 +120,7 @@ const view = {
         setTimeout(() => {
             messageContainer.textContent = '';
             messageContainer.classList.remove('error');
+            messageContainer.classList.remove('success');
             messageContainer.style.display = 'none';
         }, 3000); // Сообщение исчезнет через 3 секунды
     },
