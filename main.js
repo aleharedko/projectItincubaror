@@ -100,7 +100,7 @@ const view = {
         count.innerHTML = numberCount
     },
 
-    displayMessage(message, isError = false) {
+    displayMessage(message, isError = false, is) {
 
         messageContainer.textContent = message;     // 1. Устанавливаем сообщение, передаём для отображения
 
@@ -109,6 +109,7 @@ const view = {
         } else {
             messageContainer.classList.remove('error');
         }
+
 
         // 3. Делаем контейнер видимым (если он по умолчанию скрыт)
         messageContainer.style.display = 'block';
@@ -128,7 +129,7 @@ const controler = {
 
         if (title.trim() !== '' && content.trim() !== '' && title.length <= MAX_QUANTITY_LETTERS) {
             model.addNotes(title, content, color);
-            displayMessage.classList.add("success") // добавил класс функции ошибка
+            // displayMessage.classList.add("success")
             view.displayMessage('Заметка добавлена');
         } else {
             // Добавим более конкретное сообщение об ошибке
