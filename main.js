@@ -86,11 +86,6 @@ const view = {
              <h3 style = "background-color: ${note.color}">${note.title}</h3>
                 <p>${note.content}</p>
                 `;
-            1   === 1
-                2 === 2
-                    3 === 3
-                        4 === 4
-                            5 === 5
             // Добавляем созданный элемент в   основной контейнер.
             listContainer.appendChild(noteElement);
         })
@@ -106,10 +101,6 @@ const view = {
     },
 
     displayMessage(message, isError = false) {
-        if (!messageContainer) {
-            console.error("Контейнер для сообщений (.messages-box) не найден."); // выводит сообщение в консоль, нали это вообще, либо излишне?
-            return;
-        }
 
         messageContainer.textContent = message;     // 1. Устанавливаем сообщение, передаём для отображения
 
