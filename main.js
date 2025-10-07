@@ -30,6 +30,9 @@ const model = {
     addNotes(title, content, color){
         const idNotes = Number(new Date().getTime()) //создаю уникальный id
         const newNotes = {idNotes, title, content, color, isFavorite: false}
+        // if(isFavorite){ эта логига возможна нужны не тут
+        //     isFavorite != false
+        // }
         this.notes.unshift(newNotes)
         view.renderNotes(model.notes)
         view.renderNotesCount()
@@ -132,10 +135,8 @@ const controler = {
 
         if (title.trim() !== '' && content.trim() !== '' && title.length <= MAX_QUANTITY_LETTERS) {
             model.addNotes(title, content, color);
-            // displayMessage.classList.add("success")
             view.displayMessage('Заметка добавлена');
         } else {
-            // Добавим более конкретное сообщение об ошибке
             if (title.length > MAX_QUANTITY_LETTERS) {
                 view.displayMessage(`Заголовок не должен превышать ${MAX_QUANTITY_LETTERS} символов.`, true);
             } else {
