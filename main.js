@@ -67,6 +67,8 @@ const view = {
                 isFavorite.classList.add('isFaforit')
             }
         })
+
+        я подразумеваю что в верхнем инпуте будет располагаться сердечко если и поклику меняется изменяя свой класс
     },
 
     renderNotes(notes) {
