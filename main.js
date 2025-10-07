@@ -30,9 +30,6 @@ const model = {
     addNotes(title, content, color){
         const idNotes = Number(new Date().getTime()) //создаю уникальный id
         const newNotes = {idNotes, title, content, color, isFavorite: false}
-        // if(isFavorite){ эта логига возможна нужны не тут
-        //     isFavorite != false
-        // }
         this.notes.unshift(newNotes)
         view.renderNotes(model.notes)
         view.renderNotesCount()
@@ -62,6 +59,13 @@ const view = {
 
             inputTitel.value = '';
             inputContent.value = '';
+        })
+
+        ifFavorit.addEventListener("click",function (event){
+            if(model.isFavorite){
+                isFavorite != false
+                isFavorite.classList.add('isFaforit')
+            }
         })
     },
 
