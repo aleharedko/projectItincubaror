@@ -44,6 +44,14 @@ const model = {
         }
         return indexToDel !== -1
 
+    },
+
+    toogleFavorite(id){
+        const note = this.notes.find(note => note.idNotes === id)
+        if(note){
+            notes.isFavorite != note.isFavorite //переключение класса
+            view.renderNotes(model.notes)
+        }
     }
 }
 
@@ -67,10 +75,6 @@ const view = {
                 isFavorite.classList.add('isFaforit')
             }
         })
-
-        я подразумеваю что в верхнем инпуте будет располагаться сердечко если и поклику меняется изменяя свой класс
-            ///111,
-        12
     },
 
     renderNotes(notes) {
@@ -93,6 +97,7 @@ const view = {
         notes.forEach(note => {
             const noteElement = document.createElement('li')
             noteElement.className = 'style_note'
+            noteElement.dataset.id = note.idNotes
             noteElement.innerHTML = `
              <h3 style = "background-color: ${note.color}">${note.title}</h3>
                 <p>${note.content}</p>
