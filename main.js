@@ -99,9 +99,23 @@ const view = {
             noteElement.className = 'style_note'
             noteElement.dataset.id = note.idNotes
             noteElement.innerHTML = `
-             <h3 style = "background-color: ${note.color}">${note.title}</h3>
+                <h3 style="background-color: ${note.color}; background-image: url(/image/icons/Vector(2).png);">${note.title}</h3>
                 <p>${note.content}</p>
                 `;
+
+            // <div class="note_header" style="background-color: ${note.color};">
+            //     <h3 class="note_title">${note.title}</h3>
+            //     <div class="note_actions">
+            //         <button class="icon_favorite ${note.isFavorite ? 'is-favorite' : ''}" data-action="favorite">
+            //             <img src="image/icons/Vector (2).png" alt="Favorite" width="20" height="20">
+            //         </button>
+            //         <button class="icon_delete" data-action="delete">
+            //             <img src="image/icons/trash-icon.png" alt="Delete" width="20" height="20">
+            //         </button>
+            //     </div>
+            // </div>
+            // <p class="note_content">${note.content}</p>
+
             // Добавляем созданный элемент в   основной контейнер.
             listContainer.appendChild(noteElement);
         })
