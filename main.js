@@ -110,6 +110,10 @@ const view = {
                         123
             11111
 
+            1111\\\
+
+
+            1111
             1111
 
             // <div class="note_header" style="background-color: ${note.color};">
