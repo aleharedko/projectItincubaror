@@ -102,17 +102,6 @@ const view = {
                 <h3 style="background-color: ${note.color}; background-image: url(/image/icons/Vector(2).png);">${note.title}</h3>
                 <p>${note.content}</p>
                 `;
-
-            ?GHjfs
-
-                gfd
-            g
-            dg
-            g
-            dg
-            dg
-            dg
-            dg
             // <div class="note_header" style="background-color: ${note.color};">
             //     <h3 class="note_title">${note.title}</h3>
             //     <div class="note_actions">
