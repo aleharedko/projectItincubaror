@@ -13,10 +13,10 @@
 <div id="app"></div>
 <header class="header">
     <div class="container">
-        <img src="image/icons/📝Notes.png" height="25" width="110" alt="logo"/>
+        <img src="image/icons/📝Notes.png" alt="logo"/>
         <div>
-            <img src="image/icons/Vector.png" height="23" width="18" alt="img note"/>
-            <span>Всего Заметок</span>
+            <img src="image/icons/Vector.png" alt="img note"/>
+            <span>Всего Заметок :</span>
             <span>
         <b class="strong_number"></b>
     </span>
@@ -25,14 +25,16 @@
 </header>
 <main>
     <div class="main_container">
-        <form class="note_form" name="notes">
-            <label for="input_above">Название заметки</label>
-            <input type="text" id="input_above" placeholder="Напишите название новой заметки..." name="input_above">
+            <div class="main-logics">
 
-            <div>
-                <label for="input_below">Описание новой заметки</label>
-                <textarea rows="5" id="input_below" placeholder="Напишите описание новой заметки.."
-                          name="input_below"></textarea>
+                <div>
+                    <label for="input_below">
+                        <span>Описание новой заметки</span>
+                    </label>
+
+                    <textarea rows="5" id="input_below" placeholder="Напишите описание новой заметки.."
+                              name="input_below"></textarea>
+                </div>
 
                 <div>
                     <fieldset class="fieldset">
@@ -62,9 +64,7 @@
                         <span>Добавть заметку</span>
                     </button>
                 </div>
-
             </div>
-        </form>
 
         <div class="filter-box">
             <input type="checkbox">

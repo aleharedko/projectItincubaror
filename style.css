@@ -1,25 +1,14 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-*,
-*::before,
-*::after {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
+html,body {
     font-family: "Montserrat", sans-serif;
+    font-size: 16px;
 }
 
-.container{
-    display: flex;
-    height: 60px;
-    align-items: center;
-    justify-content: space-between;
-}
 .header{
     border-bottom: 0.3px solid black;
 }
@@ -28,19 +17,33 @@ header > div > img, .strong_number {
     margin: 0px 64px;
 }
 
+.container{
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .main_container{
     width: 1152px;
     margin: 24px 64px;
-    position: relative;
 }
 
-
-
-.note_form{
+.main-logics{
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     margin-bottom: 24px;
+    border-radius: 0.6rem;
+}
+
+.input-above-belowe{
+    display: flex;
+    flex-direction: column;
+}
+
+.belowe-container{
+
 }
 
 .messages-box{
@@ -57,14 +60,6 @@ header > div > img, .strong_number {
     box-shadow: 0 8px rgba(0, 0, 0, 0.1);
     z-index: 100;
 
-
-
-    /* Изначально делаем контейнер невидимым
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    */
-}
 
 .messages-box.error {
     background-image: url("image/icons/Vector (5).png");
@@ -164,14 +159,6 @@ legend {
     padding: 0;      /* Убираем стандартный отступ для ul */
     display: flex;   /* Добавляем, чтобы заметки выстраивались в ряд */
     flex-wrap: wrap; /* Разрешаем перенос заметок на новую строку */
-}
-
-.error{  /*для отображении сообщения об ошибке*/
-
-}
-
-.success{  /*для отображении сообщения при удачном добавлении*/
-
 }
 
 
