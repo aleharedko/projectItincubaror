@@ -26,17 +26,25 @@
 <main>
     <div class="main_container">
             <div class="main-logics">
+                <div class="box">
+                    <label for="input_above">
+                        <span>Название заметки</span>
+                    </label>
 
-                <div>
+                    <input id="input_above" placeholder="Назовите заметку.."
+                              name="input_above" class="input-box">
+                </div>
+
+                <div class="box">
                     <label for="input_below">
                         <span>Описание новой заметки</span>
                     </label>
 
                     <textarea rows="5" id="input_below" placeholder="Напишите описание новой заметки.."
-                              name="input_below"></textarea>
+                              name="input_below" class="textarea-box"></textarea>
                 </div>
 
-                <div>
+                <div class="box">
                     <fieldset class="fieldset">
                         <legend class="label">Выберите цвет заметки</legend>
                         <ul class="radio-list">
@@ -57,13 +65,15 @@
                             </li>
                         </ul>
                     </fieldset>
+
+                    <div>
+                        <button  class="btn_adds" type="submit">
+                            <img src="image/icons/plus.png" alt="button add note">
+                            <span>Добавть заметку</span>
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    <button  class="btn_adds" type="submit">
-                        <img src="image/icons/plus.png" alt="button add note">
-                        <span>Добавть заметку</span>
-                    </button>
-                </div>
+
             </div>
 
         <div class="filter-box">

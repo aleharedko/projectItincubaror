@@ -10,11 +10,11 @@ html,body {
 }
 
 .header{
-    border-bottom: 0.3px solid black;
+    border-bottom: 1px solid black;
 }
 
 header > div > img, .strong_number {
-    margin: 0px 64px;
+    margin: 0 64px;
 }
 
 .container{
@@ -46,7 +46,7 @@ header > div > img, .strong_number {
 
 }
 
-.messages-box{
+.messages-box {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -59,7 +59,7 @@ header > div > img, .strong_number {
     text-align: center;
     box-shadow: 0 8px rgba(0, 0, 0, 0.1);
     z-index: 100;
-
+}
 
 .messages-box.error {
     background-image: url("image/icons/Vector (5).png");
@@ -77,7 +77,24 @@ header > div > img, .strong_number {
     padding-left: 33px;
 }
 
+.box{
+    display: flex;
+    flex-direction: column;
+}
 
+.input-box, .textarea-box{
+    border-radius: 10px;
+    width: 30rem;
+}
+
+.textarea-box{
+    height: 5rem;
+}
+
+.input-box{
+    height: 2rem;
+
+}
 
 fieldset {
      all: unset;
@@ -134,13 +151,8 @@ legend {
     background: #457CDC;
     width: 232px;
     height: 36px;
-    angle: 0 deg;
     opacity: 1;
     border-radius: 10px;
-    padding-top: 6px;
-    padding-right: 24px;
-    padding-bottom: 6px;
-    padding-left: 24px;
     gap: 8px;
 }
 
@@ -151,17 +163,11 @@ legend {
     border-radius: 10px;
     margin: 16px;
     padding: 16px 8px;
-
 }
 
 .notes_list {
     list-style: none; /* Убираем маркеры списка */
-    padding: 0;      /* Убираем стандартный отступ для ul */
-    display: flex;   /* Добавляем, чтобы заметки выстраивались в ряд */
+    padding: 0; /* Убираем стандартный отступ для ul */
+    display: flex; /* Добавляем, чтобы заметки выстраивались в ряд */
     flex-wrap: wrap; /* Разрешаем перенос заметок на новую строку */
 }
-
-
-
-
-
