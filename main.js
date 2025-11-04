@@ -16,4 +16,5 @@ const view = {
 
 const controller = {
 1
+12
 }
