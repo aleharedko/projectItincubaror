@@ -6,6 +6,7 @@ const btn = document.addEventListener("click",function (event) {
     const btnEvent = event.target;
    const btnClick =  document.getElementById.closest("btnClick")
 })
+rewrw
 
 const idNotes = Number(new Date().getTime()) //создаю уникальный id
 
