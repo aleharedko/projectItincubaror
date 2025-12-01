@@ -9,6 +9,7 @@ const btn = document.addEventListener("click",function (event) {
 rewrw
 1231
     123232131
+    121231231
 const idNotes = Number(new Date().getTime()) //создаю уникальный id
 
 const model = {
