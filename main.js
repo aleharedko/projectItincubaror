@@ -7,10 +7,7 @@ const btn = document.addEventListener("click",function (event) {
    const btnClick =  document.getElementById.closest("btnClick")
 })
 rewrw
-1231
-    123232131
-    121231231
-121232131
+
 const idNotes = Number(new Date().getTime()) //создаю уникальный id
 
 const model = {
