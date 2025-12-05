@@ -8,7 +8,7 @@ const btn = document.addEventListener("click",function (event) {
 })
 ffsfs
     1223
-
+1
 const idNotes = Number(new Date().getTime()) //создаю уникальный id
 
 const model = {
